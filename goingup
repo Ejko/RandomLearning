@@ -1,20 +1,17 @@
 /* A program that reads an arbitrarily long sequence on positive numbers, ending with -1. Prints yes if the numbers were
 increasing and consecutive and no if not*/
 int num
-boolean consecutive_increase
-int previous=num
+boolean consecutive_increase=true
+int previous=0
 boolean finished=false
 while(!finished){
     print "Please enter a number: "
     num=Integer.parseInt(System.console().readLine())
-    if(num!=-1)   {
-       if((num==previous+1)&& (num>previous)){
-           consecutive_increase=true
+    if(num!=(-1))   {
+       if((num!=previous+1)&& (num<previous)){
+           consecutive_increase=false
        }
-        else {
-           consecutive_increase false
-           break;
-       }
+
     previous=num
     }
      else {
