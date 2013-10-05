@@ -10,6 +10,8 @@ while(!finished){
     if(num!=(-1))   {
        if((num!=previous+1)&& (num<previous)){
            consecutive_increase=false
+           break;
+
        }
 
     previous=num
