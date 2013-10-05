@@ -1,0 +1,25 @@
+/* A program which takes a number as input from the user and specifies if it's prime or not*/
+int num
+print "Please enter a number to check if it is prime: "
+num=Integer.parseInt(System.console().readLine())
+boolean ind=false
+int div=num-1
+while(div>1){
+    if(num%div==0){
+        ind=false
+        break;
+    }
+    else{
+        ind=true
+        div--
+    }
+
+}
+
+if(ind){
+    println "Number is prime"
+}
+else {
+    println "Number is not prime"
+}
+
