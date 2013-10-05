@@ -7,6 +7,7 @@ boolean finished=false
 while(!finished){
     print "Please enter a number: "
     num=Integer.parseInt(System.console().readLine())
+    if(num!=-1)   {
        if((num==previous+1)&& (num>previous)){
            consecutive_increase=true
        }
@@ -15,6 +16,10 @@ while(!finished){
            break;
        }
     previous=num
+    }
+     else {
+        finished=true
+    }
 }
 if(consecutive_increase){
     println "Yes"
