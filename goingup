@@ -8,7 +8,7 @@ while(!finished){
     print "Please enter a number: "
     num=Integer.parseInt(System.console().readLine())
     if(num!=(-1))   {
-       if((consecutive_increase=true)&&(num!=(previous+1))||(num<previous)){
+       if((consecutive_increase=true)&&(num!=(previous+1))&&(num<=previous)){
            consecutive_increase=false
             }
 
