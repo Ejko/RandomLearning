@@ -3,13 +3,13 @@ int num
 print "Please enter a number to check if it is prime: "
 num=Integer.parseInt(System.console().readLine())
 boolean ind=false
-int div=num-1
+int div=num-1               //variable to start the division with as number always divides by itself
 while(div>1){
-    if(num%div==0){
-        ind=false
+    if(num%div==0){     //attempt to divide the number by all numbers between 1 and num-1
+        ind=false       // no modulo would mean the number is not prime; exit the program
         break;
     }
-    else{
+    else{                  //if the indicator remained true after all checks, number is prime
         ind=true
         div--
     }
