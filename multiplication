@@ -1,0 +1,13 @@
+/* Program which requests two numbers from the user and prints the product without using * operator*/
+int num1, num2
+int counter
+num1=Integer.parseInt(System.console().readLine())
+num2=Integer.parseInt(System.console().readLine())
+counter=num2
+int product=0
+boolean neg=false
+while(counter!=0){
+     product=product+num1
+     counter --
+    }
+println "The product of" + num1 + " and "+ num2+ " is "+ product
