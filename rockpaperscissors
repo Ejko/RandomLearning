@@ -1,13 +1,15 @@
+/* A game of rock, paper, scissors*/
+//Author: Liliya Stefanova
 String selection, player1Sel, player2Sel
 int player1Score=0
 int player2Score=0
 int scoreDifference = 0
-while(scoreDifference<=3){
+while(scoreDifference<=3){          //ask for selections until the absolute difference is >3
     print "Please enter player selections: "
     selection=System.console().readLine()
  //   player1Sel=selection.substring(0, 1)
  //   player2Sel=selection.substring(1,2 )
-    switch(selection){
+    switch(selection){                 //scores are pre-determined based on the case; first entry is Player 1, second Player 2
         case "PP":
             player1Score=player1Score+0
             Player2Score=player2Score+0
@@ -44,11 +46,11 @@ while(scoreDifference<=3){
             player1Score=player1Score+0
             player2Score=player2Score+0
             break;
-        default:
+        default:                        //this case looks after invalid user selection
             println "Incorrect entry, choose a combination of R(rock), P(paper), S(scissors)"
             break;
     }
-    scoreDifference=Math.abs(player1Score-player2Score)
+    scoreDifference=Math.abs(player1Score-player2Score) //find the absolute value of the difference between the two scores
     println "Player 1 score: "   +player1Score
     println "Player 2 score: "   + player2Score
     if(player1Score>player2Score){
