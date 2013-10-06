@@ -1,0 +1,13 @@
+// A program which outputs a number pyramid which displays n for n times on the n-th row of the pyramid
+
+int row_num=1        //variable to define the current row number
+while(row_num<8){
+    level_num=row_num       //level_num specifies how many times will the number need to be printed on this pyramid level
+    while(level_num!=0){
+       print row_num
+       level_num --
+     }
+   println ""               //adding the new line outside of the loop to format the pyramid correctly
+  row_num ++
+ }
+println "/ldots"            // not clear on what this should represent; need to check

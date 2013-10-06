@@ -1,0 +1,27 @@
+/* A program that reads an arbitrarily long sequence on positive numbers, ending with -1. Prints yes if the numbers were
+consecutive and no if not, regardless of whether they are increasing or decreasing*/
+int num
+boolean consecutive=true
+print "Please enter a number: "
+int previous=Integer.parseInt(System.console().readLine())
+boolean finished=false
+while(!finished){
+    print "Please enter a number: "
+    num=Integer.parseInt(System.console().readLine())
+    if(num!=(-1))   {
+        if((consecutive && num!=previous+1)||(consecutive&&num!=previous-1))  {
+            consecutive=false
+        }
+        previous=num
+    }
+    else {
+        finished=true
+    }
+}
+if(consecutive){
+    println "Yes"
+}
+else {
+    println "No"
+}
+
