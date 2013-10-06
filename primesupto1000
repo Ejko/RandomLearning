@@ -1,0 +1,22 @@
+/* Print all prime numbers up to 1000*/
+//Author: Liliya Stefanova
+
+int num=1
+int counter=2              //loops between 2 and 1000
+int div                    //loops between all values between 1 and num-1
+while(counter<=1000){
+    boolean prime=true     //the variable should be inside the loop, else it stops at the first non-prime
+    num=counter
+    div=num-1
+     while(div>1){
+         if(prime&&num%div==0){  //check if the previous iteration was true and this time around num is divisible by div
+             prime=false         //this would indicate a non-prime number and therefore no need to check further
+             break;              //so break out of loop
+         }
+      div--
+     }
+     if(prime){
+       println num
+     }
+    counter ++
+}
