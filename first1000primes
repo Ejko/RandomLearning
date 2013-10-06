@@ -1,0 +1,28 @@
+/* Print the first 1000 prime numbers*/
+//Author: Liliya Stefanova
+
+int num=1
+boolean target_reached=false            //the flag which will specify when to stop checking numbers
+int numbers_covered=0                   //the counter to determine that the 1000th num has been found
+int div
+while(!target_reached){
+    if(numbers_covered<1000){
+    boolean prime=true
+    num=num+1                           //adding 1 to get the subsequent number to check
+    div=num-1
+    while(div>1){
+        if(prime&&num%div==0){
+            prime=false
+            break;
+        }
+        div--
+    }
+        if(prime){
+            println num
+             numbers_covered ++
+        }
+    }
+    else {
+        target_reached=true
+    }
+}
