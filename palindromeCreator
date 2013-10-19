@@ -1,0 +1,12 @@
+// takes input from user and prints it in reverse order
+String text, reverseText
+print "Please enter text: "
+text=new String(System.console().readLine())
+reverseText = new String()
+
+for(int i=text.length()-1; i >= 0; i--) {
+   char c=text.charAt(i)
+    reverseText=reverseText+c
+    }
+println "The text you entered and in reverse order is: "
+println text+reverseText

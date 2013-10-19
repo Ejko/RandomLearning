@@ -1,0 +1,43 @@
+// takes an expression from the command line and calculates the respective operation
+String str, operand, tempHolder
+String num1, num2
+double  firstNum, secondNum
+print "Please enter your expression: "
+str=new String(System.console().readLine())
+tempHolder=new String()
+
+for(int i=0; i<str.length(); i++) { //loop through all characters in the text and look for one of the operands
+        if(str.charAt(i)!="+" && str.charAt(i)!="-" && str.charAt(i)!="*" && str.charAt(i)!="/"){
+         tempHolder=tempHolder+str.charAt(i) //if no character is found,save the string up until this point
+        // println tempHolder
+      }
+    else{
+          operand=str.charAt(i)
+          num1=tempHolder.substring(0, i)  //the first number is the substring of the expression up until the operand
+          num2=str.substring(i+1)   //the second number is the expression after the operand
+
+        }
+   }
+
+firstNum=Double.parseDouble(num1)  //convert expressions to double
+secondNum=Double.parseDouble(num2)
+
+if(operand=="+"){
+
+    println "The sum is: "+ (firstNum+secondNum)
+}
+else if(operand=="-") {
+
+   println "The subtraction is: " +(firstNum-secondNum)
+}
+else if(operand=="*"){
+    println "THe product is: " + (firstNum*secondNum)
+}
+else{
+    if(secondNum==0){    //second number cannot be zero
+        print "Division by zero not allowed"
+    }
+    else {
+        println "The division is: " +(firstNum/secondNum)
+    }
+}
