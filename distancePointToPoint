@@ -1,0 +1,50 @@
+class Point {
+    double x;
+    double y;
+}
+Point point1 = new Point();
+Point point2 = new Point();
+Point point3 = new Point();
+print "Please enter x coordinate for the first point: "
+point1.x=Double.parseDouble(System.console().readLine())
+print "Please enter y coordinate for the first point: "
+point1.y=Double.parseDouble(System.console().readLine())
+print "Please enter x coordinate for the second point: "
+point2.x=Double.parseDouble(System.console().readLine())
+print "Please enter y coordinate for the second point: "
+point2.y=Double.parseDouble(System.console().readLine())
+print "Please enter x coordinate for the third point: "
+point3.x=Double.parseDouble(System.console().readLine())
+print "Please enter y coordinate for the third point: "
+point3.y=Double.parseDouble(System.console().readLine())
+
+def distance(double coordinate1x, double coordinate2x,double coordinate1y, double coordinate2y){
+
+    double differenceX=Math.abs(coordinate1x-coordinate2x)
+    println "Difference x: " + differenceX
+    double differenceY=Math.abs(coordinate1y-coordinate2y)
+    println "Difference y: " + differenceY
+    double distance=Math.sqrt(differenceX*differenceX+differenceY*differenceY)
+    println "Distance: "+ distance
+    return distance
+}
+double distance12=distance(point1.x, point2.x, point1.y, point2.y)
+println "Distance 1 to 2:" +distance12
+double distance13=distance(point1.x, point3.x, point1.y, point3.y)
+println "Distance 1 to 3: "+ distance13
+double distance23=distance(point2.x, point3.x, point2.y, point3.y)
+println "Distance 2 to 3: "+ distance23
+
+double shortestDistance=distance12
+if(distance13<shortestDistance){
+    shortestDistance=distance13
+    println "The closest points are 1 and 3"
+  }
+else if(distance23<=shortestDistance){
+    shortestDistance=distance23
+    println "The closest points are 2 and 3"
+ }
+else {
+    println "The closest points are 1 and 2"
+}
+//println "The distance between them is: " + shortestDistance
