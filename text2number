@@ -1,0 +1,36 @@
+//a parser which converts a number such as 12, 456.78 to a double and calculates and prints half of that number
+String str, tempHolderMain, tempHolderDec
+print "Please enter a number: "
+str=new String(System.console().readLine())
+tempHolderMain=new String()
+tempHolderDec=new String()
+int posCounter=0            // counts the number of characters after the decimal point to be able to calculate fraction
+int decimalPointPos=0      //holds the position at which the decimal point is found
+
+for(int i=0; i<str.length(); i++){
+    if (str.charAt(i) != "," && str.charAt(i) != ".") {  //adds to a temp variable any characters not , and .
+        if (decimalPointPos != 0) {                     //once the dec point is encountered, no more chars added
+            break
+        }
+
+        else {
+            tempHolderMain += str.substring(i, i+1)   //this holds the non-decimal part of the number
+            }
+
+    } else {
+
+        if (str.charAt(i) == ".") {
+            decimalPointPos = i
+            tempHolderDec = tempHolderDec + str.substring(decimalPointPos + 1)  //adds to the decimal part of the num
+            posCounter = tempHolderDec.length()    //records the number of positions after dec point
+        }
+    }
+}
+
+int numMain=Integer.parseInt(tempHolderMain)     //convert the main part of num to integer
+int numFraction=Integer.parseInt(tempHolderDec)  //convert the decimal part of num to integer
+//divide the decimal num by 10 to the power of the number of positions after the dec point
+double fraction=numFraction/ Math.pow(10, posCounter)
+println "The number you entered is: " + (numMain+fraction)  //add main and decimal to arrive at final number
+print "Half of the number entered is: " + (numMain+fraction)/2
+
