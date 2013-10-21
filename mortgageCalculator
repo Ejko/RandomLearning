@@ -1,0 +1,33 @@
+class Mortgage {
+    double totalAmountBorrowed
+    int numberOfYears
+    double interestRate
+
+    double totalAmountToBePaid(){
+        double totalAmountToPay=totalAmountBorrowed*(1+interestRate/100)
+        return totalAmountToPay
+    }
+
+    double amountToBePaidAnnually(){
+          double totalAmountPerYear=totalAmountToBePaid()/numberOfYears
+          return totalAmountPerYear
+    }
+    int numberOfYearsToPayInterest(){
+          double totalInterestToPay=totalAmountBorrowed*interestRate/100
+          double yearsToPayOffInterest=totalInterestToPay/amountToBePaidAnnually()
+          return yearsToPayOffInterest
+    }
+
+}
+
+Mortgage customerMortgage=new Mortgage()
+print "Please enter the total amount the customer wants to borrow: "
+customerMortgage.totalAmountBorrowed=Double.parseDouble(System.console().readLine())
+print "Please enter the number of years the mortgage should be paid back in: "
+customerMortgage.numberOfYears=Integer.parseInt(System.console().readLine())
+print "Please enter a percentage interest rate(fixed rate for the duration of the mortgage: "
+customerMortgage.interestRate= Double.parseDouble(System.console().readLine())
+
+println "The total amount to be paid out on the mortgage is: " + customerMortgage.totalAmountToBePaid()
+println "The amount to be paid annually on the mortgage is: " +  customerMortgage.amountToBePaidAnnually()
+println "The number of years it will take to for the interest to be paid off is: "+ customerMortgage.numberOfYearsToPayInterest()
