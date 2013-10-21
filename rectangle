@@ -1,0 +1,23 @@
+class Point{
+    double x;
+    double y;
+}
+class Rectangle{
+    Point upLeft;
+    Point downRight;
+}
+Rectangle rectangle1=new Rectangle();
+rectangle1.upLeft=new Point()
+rectangle1.downRight=new Point()
+
+
+double rectangleLength=Math.abs(rectangle1.upLeft.x-rectangle1.downRight.x)
+println rectangleLength
+double rectangleHeight=Math.abs(rectangle1.upLeft.y-rectangle1.downRight.y)
+println rectangleHeight
+
+double rectangleArea=rectangleLength*rectangleHeight
+double rectanglePerimeter=2*(rectangleLength+rectangleHeight)
+
+println "The area of this rectangle is: " + Math.round(rectangleArea)
+println "The perimeter of this rectangle is: " + Math.round(rectanglePerimeter)
