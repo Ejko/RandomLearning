@@ -1,0 +1,44 @@
+//read the coordinates of 2 points defining a rectangle and then the coordinates of a third point
+//the program will determine whether the point falls in or out of the rectangle
+
+class Point{
+    double x;
+    double y;
+}
+class Rectangle{
+    Point upLeft;
+    Point downRight;
+}
+Rectangle rectangle1=new Rectangle()
+rectangle1.upLeft=new Point()
+rectangle1.downRight=new Point()
+Point thirdPoint=new Point()
+
+print "Enter x coordinate for the upper left corner: "
+rectangle1.upLeft.x=Double.parseDouble(System.console().readLine())
+print "Enter the y coordinate for the upper left corner: "
+rectangle1.upLeft.y=Double.parseDouble(System.console().readLine())
+print "Enter the x coordinate for lower right corner: "
+rectangle1.downRight.x=Double.parseDouble(System.console().readLine())
+if(rectangle1.downRight.x<rectangle1.upLeft.x){
+    print "Please enter a value bigger than the up left x coordinate: "
+    rectangle1.downRight.x=Double.parseDouble(System.console().readLine())
+}
+print "Enter the y coordinate for the lower right corner: "
+rectangle1.downRight.y=Double.parseDouble(System.console().readLine())
+if(rectangle1.downRight.y>rectangle1.upLeft.y){
+    print "Please enter a value smaller than the top left corner y coordinate: "
+    rectangle1.downRight.y=Double.parseDouble(System.console().readLine())
+}
+print "Enter x coordinate for the third point: "
+thirdPoint.x=Double.parseDouble(System.console().readLine())
+println "Enter y coordinates for the third point: "
+thirdPoint.y=Double.parseDouble(System.console().readLine())
+
+if(thirdPoint.y<rectangle1.upLeft.y&&thirdPoint.y>rectangle1.downRight.y && thirdPoint.x>rectangle1.upLeft.x&&thirdPoint.x<rectangle1.downRight.x){
+    println "Point is in the rectangle"
+}
+
+else {
+    println "Point is not in the rectangle"
+}
