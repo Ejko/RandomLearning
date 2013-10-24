@@ -1,0 +1,96 @@
+class Point{
+
+    double x
+    double y
+
+    void setPoint(double x, double y){
+        this.x=x
+        this.y=y
+    }
+    double distanceTo(Point pointZ){
+        double diffX=Math.abs(this.x-pointZ.x)
+        double diffY=Math.abs(this.y-pointZ.y)
+        double distance= Math.sqrt(diffX*diffX+diffY*diffY)
+
+    return distance
+    }
+
+    double distanceToOrigin(){
+        Point origin=new Point()
+        origin.x=0
+        origin.y=0
+        double distanceToOrigin=distanceTo(origin)
+     }
+
+    void moveTo(double x, double y){
+        this.x=x
+        this.y=y
+     }
+
+    void moveTo(Point newP){
+        this.x=newP.x
+        this.y=newP.y
+    }
+    Point copy(){
+        Point copy=new Point()
+        copy.setPoint(x, y)
+        return copy
+    }
+   Point opposite(){
+        Point copyMinusOne=new Point()
+        copyMinusOne.setPoint(-x, -y)
+        return copyMinusOne
+     }
+}
+Point myPoint=new Point()
+Point difPoint=new Point()
+print "Enter x coordinate: "
+double x=Double.parseDouble(System.console().readLine())
+print "Enter y coordinate: "
+double y=Double.parseDouble(System.console().readLine())
+myPoint.setPoint(x, y)
+println "What would you like to do? "
+println "1-find the distance to another point "
+println "2-find the distance to origin"
+println "3-move the point to new coordinates specified by you"
+println "4-move the point to another given point"
+println "5-return a copy with the same coordinates"
+println "6-return a copy of the point with opposite coordinates"
+String input=System.console().readLine()
+switch(input){
+    case "1":
+        print "Please enter the x coordinates of the new point: "
+        difPoint.x=Double.parseDouble(System.console().readLine())
+        print "Please enter the y coordinate of the new point: "
+        difPoint.y=Double.parseDouble(System.console().readLine())
+        print "The distance between your point and the provided one is: " + myPoint.distanceTo(difPoint)
+        break
+    case "2":
+        print "The distance between your point and the origin is: "+ myPoint.distanceToOrigin()
+        break
+    case "3":
+        print "Please enter the x coordinate to move the point to: "
+        double newX=Double.parseDouble(System.console().readLine())
+        print "PLease enter the y coordinate to move the point to: "
+        double newY=Double.parseDouble(System.console().readLine())
+        myPoint.moveTo(newX, newY)
+        println "The current coordinates are: "+ myPoint.x+ " and "+ myPoint.y
+    case "4":
+        Point newP=new Point()
+        print "Please enter the x coordinate of the other point: "
+        newP.x=Double.parseDouble(System.console().readLine())
+        print "PLease enter the y coordinate of the other point: "
+        newP.y=Double.parseDouble(System.console().readLine())
+        myPoint.moveTo(newP)
+        println "The current coordinates are: "+ myPoint.x+ " and "+ myPoint.y
+    case "5":
+        Point copyPoint=myPoint.copy()
+        println "The copy point has x coordinate: " +  copyPoint.x
+     case "6":
+         Point oppositeCopy=myPoint.opposite()
+         println "The copied point has x coordinate: " + oppositeCopy.x
+         println "The original point has x coordinate:" + myPoint.x
+    default:
+        print "You have chosen an invalid option-try again!"
+        break
+}
