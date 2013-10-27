@@ -1,0 +1,77 @@
+String requestUser(){
+    String result= System.console().readLine();
+    return result;
+}
+
+void createUser(){
+    String user=requestUser();
+    while(!isValidUser(user)){
+        println "The name is not valid. Try again";
+        user=requestUser();
+    }
+
+    insertUserInDB(user);
+
+}
+
+void deleteUser(){
+    String user=requestUser()
+    while(!isValidUser(user)){
+        println "The name is not valid. Please try again";
+        user=requestUser();
+    }
+    if(existsInDB(user)){
+        deleteUserFromDB(user);
+    }
+    else {
+        println "This user does not exist"
+    }
+}
+
+void insertUserInDB(String user){
+    ////
+ }
+
+void deleteUserFromDB(String user){
+    ////
+}
+
+boolean existsInDB(String user){
+    ///
+}
+
+boolean isValidUser(String login){
+    boolean loginIsValid=true;
+    for(int i=0; i<login.length(); i++){
+        char c=login.charAt(i)
+        if(!Character.isLetter(c)||!Character.isLowerCase(c)){
+            loginIsValid=false
+        }
+     }
+    return loginIsValid;
+}
+
+boolean running=true;
+while(running){
+    println "What would you like to do?";
+    println "1-Enter a new user";
+    println "2-Delete an existing user";
+    println "0-Exit";
+    print ">";
+    String str=System.console().readLine()
+    int option=Integer.parseInt(str)
+    switch(option){
+        case 0:
+            running=false;
+            break;
+        case 1:
+            createUser();
+            break;
+        case 2:
+            deleteUser();
+            break;
+        default:
+            println "You have chosen an invalid option. Please try again."
+            break;
+    }
+}
