@@ -1,0 +1,67 @@
+class Integer2{
+    int value
+
+    int getValue(){
+      //a getter method
+    return value;
+
+    }
+    void getValue(int n){
+        //a setter method
+    this.value=n;
+    }
+
+    boolean isEven(){
+        //check if the integer is an even number
+    boolean isEven=false;
+    if(getValue()%2==0){
+        isEven=true;
+    }
+     return isEven;
+    }
+
+    boolean isOdd(){
+       //checks if integer is an odd number
+    boolean isOdd=false;
+    if(getValue()%2!=0){
+        isOdd=true;
+     }
+    return isOdd;
+    }
+
+    void prettyPrint(){
+        //prints the integer on the screen
+    println getValue();
+    }
+
+   String toString(int n){
+        //returns a string equivalent of the integer
+   int quotient=n
+   while(quotient>0){
+       quotient=quotient/10
+       int mod=quotient%10
+       char c=mod
+   }
+   }
+
+}
+
+Integer2 i2=new Integer2();
+print "Enter a number: ";
+String str=System.console().readLine();
+int i=Integer.parseInt(str);
+i2.getValue(i);
+print "The number you entered is: ";
+if(i2.isEven()){
+    println "Even";
+}
+else if (i2.isOdd()) {
+    println "Odd";
+}
+else{
+    println "Undefined, your code is buggy";
+}
+//int parseInt=Integer.parseInt(i2.toString());
+//if(parseInt==i2.getValue()){
+ //   println "Your toString method seems to work fine "
+
