@@ -1,0 +1,13 @@
+void add1000(int num){
+    println "Starting method, parameter is " + num
+    num=num+500
+    println "In the middle of the method, the parameter is: " +num
+    num=num+500
+    println "Ending method, the parameter value is: "+num
+    }
+//program execution starts
+int myNumber=0
+println "Starting program, my number is: "+myNumber
+//calling method
+add1000(myNumber)
+println "After method execution, the value of my number is: "+ myNumber
