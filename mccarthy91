@@ -1,0 +1,15 @@
+int mcCarthy91(int n){
+    if(n>100){
+        return n-10;
+    }
+    else{
+        println "n+11: "+ mcCarthy91(n+11)
+        println "rec call on n+11: "+mcCarthy91(mcCarthy91(n+11))
+        int result=mcCarthy91(mcCarthy91(n+11))
+        return result
+        print "Target_2D_Array.Result: " +result
+
+    }
+
+}
+mcCarthy91(73)

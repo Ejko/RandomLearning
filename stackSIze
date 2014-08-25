@@ -1,0 +1,10 @@
+int countForeverUp(int previousCount){
+    int numCalls=0
+    int newCount=previousCount+1;
+    println newCount;
+    countForeve rUp(newCount);
+    numCalls++
+    println numCalls
+     }
+
+countForeverUp(7)

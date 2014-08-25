@@ -1,0 +1,8 @@
+int n=6;
+int fact=n
+  while(n>1){
+       n--
+    fact=fact*n
+
+    }
+println fact

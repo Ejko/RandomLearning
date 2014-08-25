@@ -39,7 +39,7 @@ double shortestDistance=distance12
 if(distance13<shortestDistance){
     shortestDistance=distance13
     println "The closest points are 1 and 3"
-  }
+  B}
 else if(distance23<=shortestDistance){
     shortestDistance=distance23
     println "The closest points are 2 and 3"

@@ -1,0 +1,16 @@
+def hanoi(int n) {
+    if (n == 1) {
+        return 2
+    } else {
+        return 2 * hanoi(n - 1)
+    }
+}
+
+int add_recursively(int n, f) {
+    if (n == 1) {
+        return f(n)
+    }
+    return f(n) + add_recursively(n - 1, f)
+}
+
+println add_recursively(3, this.&hanoi)

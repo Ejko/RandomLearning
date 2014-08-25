@@ -1,0 +1,42 @@
+
+public int[] returnSize(String strSize){
+    int size = Integer.parseInt(strSize.substring(1))
+    String numPositions=strSize.substring(1)
+
+    if(size==0 && numPositions.length()==1){
+        println "size = " + size + ", return = [1189, 841]"
+        return [1189,841]
+    }
+    else if(numPositions.length()>1){
+        int [] prev_dim=returnSize(strSize.substring(0,1)+numPositions.substring(0, numPositions.length()-1))
+        next_size=[prev_dim[1]*2, prev_dim[0]]
+        println "size = " + strSize + ", return = " + next_size
+        return next_size
+    }
+        else{
+        int [] prev_dim=returnSize(strSize.substring(0,1)+(size-1).toString())
+        a_variable = [prev_dim[1], prev_dim[0]/2]
+        println "size = " + size + ", return = " + a_variable
+        return a_variable
+    }
+}
+println returnSize("A000")
+
+/*public int [] returnSizeLarge(String largeSize){
+
+    //int initialSize=Integer.parseInt(largeSize.substring(1))
+    //println initialSize
+    if (numPositions.length()==1){
+        println "size = " + "A0" + ", return = " + [1189,841]
+        return [1189,841]
+    }
+    else{
+        int [] prev_dim=returnSizeLarge(largeSize.substring(0,1)+numPositions.substring(0, numPositions.length()-1))
+        next_size=[prev_dim[1]*2, prev_dim[0]]
+        println "size = " + largeSize + ", return = " + next_size
+        return next_size
+    }
+}
+
+println returnSizeLarge("A000")
+*/

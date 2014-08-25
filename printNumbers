@@ -1,0 +1,15 @@
+void printNumbers(int n){
+    if(n<=0){
+        return;
+    }
+    println n;
+//println "Recursion n-2: "
+printNumbers(n-2);
+//println "Second recursion: "
+printNumbers(n-3);
+println n;
+}
+
+//println "Please enter a number: "
+//int num=Integer.parseInt(System.console().readLine())
+printNumbers(6)

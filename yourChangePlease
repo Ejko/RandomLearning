@@ -1,0 +1,140 @@
+double totalCost, moneyPaid, changeDue
+double remainder=0
+print "Please enter the total cost of purchase: "
+totalCost=Double.parseDouble(System.console().readLine())
+print "Please enter money paid: "
+moneyPaid=Double.parseDouble(System.console().readLine())
+changeDue=(moneyPaid-totalCost).round(2)
+println "The change due is: " + changeDue
+println "Please pay the client: "
+if(changeDue/50>=1){
+    int num50pounds = changeDue/50
+    println num50pounds  + " 50 pound notes"
+    remainder = changeDue%50
+    if(remainder/20>=1){
+        int num20s=remainder/20
+        println num20s + " 20 pound notes"
+        remainder=remainder%20
+    }
+    if(remainder/10>=1){
+        int num10s=remainder/10
+        println num10s + " 10 pound notes"
+        remainder=remainder%10
+    }
+    if(remainder/5>=1){
+        int num5s=remainder/5
+        println num5s  + " 5 pound notes"
+        remainder=remainder%5
+    }
+    if(remainder/2>=1){
+        int num2s=remainder/2
+        println num2s  + " 2 pound coins"
+        remainder=remainder%2
+    }
+    if(remainder/1>=1){
+        int num1s=remainder/1
+        println num1s  + " 1 pound coins"
+        remainder=remainder%1
+    }
+    if(remainder/0.50>=1) {
+        int num50pence=remainder/0.50
+        println num50pence + " 50 pence coins"
+        remainder=remainder%0.50
+    }
+    if(remainder/0.20>=1){
+        int num20pence=remainder/0.20
+        println num20pence + " 20 pence coins"
+        remainder=remainder%0.20
+    }
+    if(remainder/0.10>=1){
+        int num10pence=remainder/0.10
+        println num10pence + " 10 pence coins"
+        remainder=remainder%0.10
+    }
+    if(remainder/0.05>=1){
+        int num5pence=remainder/0.05
+        println num5pence  + " 5 pence coins"
+        remainder=remainder/0.05
+        println remainder
+    }
+    if(remainder/0.02>=1){
+        int num2pence=remainder/0.02
+        println num2pence  + " 2 pence coins"
+        remainder=remainder/0.02
+        println remainder
+    }
+    if(remainder/0.01>=1){
+        int num1pence=remainder/1
+        println num1pence +  " 1 pence coins"
+
+    }
+}
+else if (changeDue/20>=1){
+    int num20s=remainder/20
+    println num20s + " 20 pound notes"
+    remainder=remainder %20
+    if(remainder/10>=1){
+        int num10s=remainder/10
+        println num10s + " 10 pound notes"
+        remainder=remainder%10
+    }
+    if(remainder/5>=1){
+        int num5s=remainder/5
+        println num5s  + " 5 pound notes"
+        remainder=remainder%5
+    }
+    if(remainder/2>=1){
+        int num2s=remainder/2
+        println num2s  + " 2 pound coins"
+        remainder=remainder%2
+    }
+    if(remainder/1>=1){
+        int num1s=remainder/1
+        println num1s  + " 1 pound coins"
+        remainder=remainder%1
+    }
+    if(remainder/0.50>=1) {
+        int num50pence=remainder/0.50
+        println num50pence + " 50 pence coins"
+        remainder=remainder%0.50
+    }
+    if(remainder/0.20>=1){
+        int num20pence=remainder/0.20
+        println num20pence + " 20 pence coins"
+        remainder=remainder%0.20
+    }
+    if(remainder/0.10>=1){
+        int num10pence=remainder/0.10
+        println num10pence + " 10 pence coins"
+        remainder=remainder%0.10
+    }
+    if(remainder/0.05>=1){
+        int num5pence=remainder/0.05
+        println num5pence  + " 5 pence coins"
+        remainder=remainder/0.05
+        println remainder
+    }
+    if(remainder/0.02>=1){
+        int num2pence=remainder/0.02
+        println num2pence  + " 2 pence coins"
+        remainder=remainder/0.02
+        println remainder
+    }
+    if(remainder/0.01>=1){
+        int num1pence=remainder/1
+        println num1pence +  " 1 pence coins"
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
